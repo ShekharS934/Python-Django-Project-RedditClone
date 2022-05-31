@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center><h1>New Post</h1>
+    
+    {%if error%}
+        {{ error }}
+    
+    {%endif%}
+    
+    <br />
+    <br />
+
+<form method="Post" action="{% url 'posts:create'%}">
+    {% csrf_token %}
+    
+    
+    Title:
+    <br />
+    <input type="text" name="Title" />
+    <br />
+    Url:
+    <br />
+    <input type="text" name="Url" />
+    <br />
+    
+    <br />
+    <input class="btn btn-dark" type="submit" value="Post">
+</form></center>
+
+
+{% endblock %}
